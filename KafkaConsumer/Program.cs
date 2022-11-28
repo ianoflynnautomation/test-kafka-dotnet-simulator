@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-
+using Confluent.Kafka;
 namespace KafkaConsumer
 {
     public class Program

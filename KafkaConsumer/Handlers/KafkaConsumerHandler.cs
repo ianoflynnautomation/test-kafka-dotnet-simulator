@@ -7,18 +7,16 @@ namespace KafkaConsumer.Handlers
 {
     public class KafkaConsumerHandler : IHostedService
     {
+        private ConsumerConfig _config;
+        public KafkaConsumerHandler(ConsumerConfig config)
+        {
+            _config = config;
+        }
+
         private readonly string topic = "simpletalk_topic";
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            var conf = new ConsumerConfig
-            {
-                GroupId = "st_consumer_group",
-                BootstrapServers = "localhost:9092",
-                AutoOffsetReset = AutoOffsetReset.Earliest
-            };
-
-            using (var builder = new ConsumerBuilder<Ignore,
-                    string>(conf).Build())
+            using (var builder = new ConsumerBuilder<Ignore, string>(_config).Build())
             {
                 builder.Subscribe(topic);
                 var cancelToken = new CancellationTokenSource();
