@@ -25,8 +25,8 @@ namespace KafkaConsumer
             {
                 var config = new ConsumerConfig();
                 {
-                    config.BootstrapServers = Configuration.GetValue<string>("Consumer:BootstrapServers");
-                    config.GroupId = Configuration.GetValue<string>("Consumer:GroupId");
+                    config.BootstrapServers = Configuration.GetValue<string>("Kafka:ConsumerSettings:BootstrapServers");
+                    config.GroupId = Configuration.GetValue<string>("Kafka:ConsumerSettings:GroupId");
                     config.AutoOffsetReset = AutoOffsetReset.Earliest;
 
                 }

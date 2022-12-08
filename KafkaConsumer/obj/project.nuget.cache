@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/aEE0GyJbkWqYfgD/Nn55k4FjW2xHBv7/Xkk3SYyVqoce3cH9xrJmyt11mmgbKAUjJpUkJ2nNrhGX/Nr0Qmsww==",
+  "dgSpecHash": "Z5YMesJP4APIRgUJatweqjPP1UpARgKtjlzMvpDMZJMs++jXx4FLQi9hxG15LmE/edTZPomDbFTHhBr7zJ0L7Q==",
   "success": true,
-  "projectFilePath": "/Users/ianoflynn/test-kafka-dotnet-simulator/KafkaConsumer/KafkaConsumer.csproj",
+  "projectFilePath": "/Users/ianoflynn/test-kafka-dotnet-simulator/test-kafka-dotnet-simulator/KafkaConsumer/KafkaConsumer.csproj",
   "expectedPackageFiles": [
     "/Users/ianoflynn/.nuget/packages/confluent.kafka/1.9.4-rc1/confluent.kafka.1.9.4-rc1.nupkg.sha512",
     "/Users/ianoflynn/.nuget/packages/librdkafka.redist/1.9.3-rc2/librdkafka.redist.1.9.3-rc2.nupkg.sha512",

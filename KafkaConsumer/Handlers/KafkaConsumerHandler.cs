@@ -3,6 +3,8 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text.Json;
+using System.Diagnostics;
 namespace KafkaConsumer.Handlers
 {
     public class KafkaConsumerHandler : IHostedService
@@ -13,7 +15,7 @@ namespace KafkaConsumer.Handlers
             _config = config;
         }
 
-        private readonly string topic = "simpletalk_topic";
+        private readonly string topic = "test_topic";
         public Task StartAsync(CancellationToken cancellationToken)
         {
             using (var builder = new ConsumerBuilder<Ignore, string>(_config).Build())
@@ -25,8 +27,9 @@ namespace KafkaConsumer.Handlers
                 {
                     while (true)
                     {
-                        var consumer = builder.Consume(cancelToken.Token);
-                        Console.WriteLine($"Message: {consumer.Message.Value} received from {consumer.TopicPartitionOffset}");
+                        var consumed = builder.Consume(cancelToken.Token);
+                        var orderRequest = JsonSerializer.Deserialize<ProcessOrder>(consumed.Message.Value);
+                        Debug.WriteLine($"Processing Order Id:{orderRequest.OrderId}");
                     }
                 }
                 catch (Exception)

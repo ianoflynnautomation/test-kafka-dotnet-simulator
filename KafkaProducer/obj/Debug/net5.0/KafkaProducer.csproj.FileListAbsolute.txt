@@ -47,7 +47,6 @@
 /Users/ianoflynn/test-kafka-dotnet/WorkWithKafka-DotNetCore/KafkaProducer/bin/Debug/net5.0/runtimes/win-x86/native/vcruntime140.dll
 /Users/ianoflynn/test-kafka-dotnet/WorkWithKafka-DotNetCore/KafkaProducer/bin/Debug/net5.0/runtimes/win-x86/native/zlib1.dll
 /Users/ianoflynn/test-kafka-dotnet/WorkWithKafka-DotNetCore/KafkaProducer/bin/Debug/net5.0/runtimes/win-x86/native/zstd.dll
-/Users/ianoflynn/test-kafka-dotnet-simulator/test-kafka-dotnet-simulator/KafkaProducer/bin/Debug/net5.0/appsettings.Development.json
 /Users/ianoflynn/test-kafka-dotnet-simulator/test-kafka-dotnet-simulator/KafkaProducer/bin/Debug/net5.0/appsettings.json
 /Users/ianoflynn/test-kafka-dotnet-simulator/test-kafka-dotnet-simulator/KafkaProducer/bin/Debug/net5.0/KafkaProducer
 /Users/ianoflynn/test-kafka-dotnet-simulator/test-kafka-dotnet-simulator/KafkaProducer/bin/Debug/net5.0/KafkaProducer.deps.json
@@ -145,3 +144,4 @@
 /Users/ianoflynn/test-kafka-dotnet-simulator/KafkaProducer/obj/Debug/net5.0/KafkaProducer.pdb
 /Users/ianoflynn/test-kafka-dotnet-simulator/KafkaProducer/obj/Debug/net5.0/KafkaProducer.genruntimeconfig.cache
 /Users/ianoflynn/test-kafka-dotnet-simulator/KafkaProducer/obj/Debug/net5.0/ref/KafkaProducer.dll
+/Users/ianoflynn/test-kafka-dotnet-simulator/test-kafka-dotnet-simulator/KafkaProducer/bin/Debug/net5.0/appsettings.Development.json

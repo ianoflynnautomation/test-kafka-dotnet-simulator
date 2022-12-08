@@ -257,11 +257,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ianoflynn/test-kafka-dotnet-simulator/KafkaProducer/KafkaProducer.csproj",
+      "projectUniqueName": "/Users/ianoflynn/test-kafka-dotnet-simulator/test-kafka-dotnet-simulator/KafkaProducer/KafkaProducer.csproj",
       "projectName": "KafkaProducer",
-      "projectPath": "/Users/ianoflynn/test-kafka-dotnet-simulator/KafkaProducer/KafkaProducer.csproj",
+      "projectPath": "/Users/ianoflynn/test-kafka-dotnet-simulator/test-kafka-dotnet-simulator/KafkaProducer/KafkaProducer.csproj",
       "packagesPath": "/Users/ianoflynn/.nuget/packages/",
-      "outputPath": "/Users/ianoflynn/test-kafka-dotnet-simulator/KafkaProducer/obj/",
+      "outputPath": "/Users/ianoflynn/test-kafka-dotnet-simulator/test-kafka-dotnet-simulator/KafkaProducer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ianoflynn/.nuget/NuGet/NuGet.Config"

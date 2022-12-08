@@ -1,7 +1,9 @@
 ﻿using Confluent.Kafka;
 using Microsoft.AspNetCore.Mvc;
 using System;
-
+using System.Text.Json;
+using System.Diagnostics;
+using System.Threading.Tasks;
 namespace KafkaProducer.Controllers
 {
     [Route("api/kafka")]
@@ -13,32 +15,38 @@ namespace KafkaProducer.Controllers
             BootstrapServers = "localhost:9092"
         };
 
-        private readonly string topic = "simpletalk_topic";
+        private readonly string topic = "test_topic";
 
         [HttpPost]
-        public IActionResult Post([FromQuery] string message)
+        public async Task<IActionResult>
+               Post([FromBody] OrderRequest orderRequest)
         {
-            return Created(string.Empty, SendToKafka(topic, message));
+            string message = JsonSerializer.Serialize(orderRequest);
+            return Ok(await SendOrderRequest(topic, message));
         }
-
-        private Object SendToKafka(string topic, string message)
+        private async Task<bool> SendOrderRequest
+          (string topic, string message)
         {
-            using (var producer =
-                 new ProducerBuilder<Null, string>(config).Build())
+            try
             {
-                try
+                using (var producer = new ProducerBuilder<Null, string>(config).Build())
                 {
-                    return producer.ProduceAsync(topic, new Message<Null, string> { Value = message })
-                        .GetAwaiter()
-                        .GetResult();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"Oops, something went wrong: {e}");
+                    var result = await producer.ProduceAsync(topic, new Message<Null, string>
+                    {
+                        Value = message
+                    });
+
+                    Debug.WriteLine($"Delivery Timestamp:{result.Timestamp.UtcDateTime}");
+                    return await Task.FromResult(true);
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occured: {ex.Message}");
+            }
 
-            return null;
+            return await Task.FromResult(false);
         }
     }
+
 }
